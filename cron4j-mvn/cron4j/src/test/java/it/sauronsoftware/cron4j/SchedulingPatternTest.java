@@ -1,37 +1,38 @@
-package it.sauronsoftware;
+package it.sauronsoftware.cron4j;
 
-import it.sauronsoftware.cron4j.SchedulingPattern;
-import it.sauronsoftware.cron4j.InvalidPatternException;
+import junit.framework.Test;
+import junit.framework.TestCase;
+import junit.framework.TestSuite;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
+/**
+ * Unit test for simple App.
+ */
+public class AppTest 
+    extends TestCase
+{
+    /**
+     * Create the test case
+     *
+     * @param testName name of the test case
+     */
+    public AppTest( String testName )
+    {
+        super( testName );
+    }
 
-import org.junit.AfterClass;
-import org.junit.BeforeClass;
-import org.junit.Test;
+    /**
+     * @return the suite of tests being tested
+     */
+    public static Test suite()
+    {
+        return new TestSuite( AppTest.class );
+    }
 
-public class SchedulingPatternTest {
-
-  @BeforeClass
-  public static void testSetup() {
-  }
-
-  @AfterClass
-  public static void testCleanup() {
-    // Teardown for data used by the unit tests
-  }
-
-  @Test(expected = InvalidPatternException.class)
-  public void testExceptionIsThrown() {
-    SchedulingPattern sp = new SchedulingPattern("0 5 * * *");
-  }
-
-  @Test
-  public void testPattern() {
-    String pattern;
-    pattern="0 5 * * *|8 10 * * *|22 17 * * *";
-    assertTrue(pattern + "is correct", SchedulingPattern.validate(pattern));
-    pattern="0 5 * * *";
-    assertTrue(pattern + "is correct", SchedulingPattern.validate(pattern));
-  }
+    /**
+     * Rigourous Test :-)
+     */
+    public void testApp()
+    {
+        assertTrue( true );
+    }
 }
